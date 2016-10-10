@@ -1,0 +1,15 @@
+%h4
+  New User
+ 
+=error_messages_for @user
+
+=form_for @user do |f|
+
+  =render partial: 'form_fields', locals: {f: f}
+
+  .row
+    .three.columns
+      =f.submit 'Create User', class: 'button-primary'
+     
+
+

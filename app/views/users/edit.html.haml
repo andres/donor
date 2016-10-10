@@ -1,0 +1,32 @@
+%h4
+  Editing User
+ 
+=error_messages_for @user
+
+=form_for @user do |f|
+
+  .row
+    .three_columns
+      %label 
+        Login
+      %div
+        =@user.login
+    .three_columns
+      =f.label :active
+      =f.check_box :active
+  .row
+    .tree_columns
+      =f.label :password
+      =f.password_field :password
+  .row
+    .tree_columns
+      =f.label :password_confirmation
+      =f.password_field :password_confirmation
+
+
+  .row
+    .three.columns
+      =f.submit 'Update User', class: 'button-primary'
+     
+
+

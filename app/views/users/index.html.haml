@@ -1,0 +1,15 @@
+%h5
+  Users
+  %span.smaller
+    =link_to 'new', new_user_url
+
+
+%table.u-full-width
+  %thead
+    %th
+      Login
+    %th
+      Active
+  %tbody
+    =render partial: 'row', collection: @users, as: :user
+ 
