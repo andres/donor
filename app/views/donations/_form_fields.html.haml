@@ -1,0 +1,16 @@
+.row
+  .three.columns
+    =f.label :campaign
+    =f.select :campaign_id, options_from_collection_for_select( @campaigns, :id, :label )
+  .five.columns
+    =f.label 'Donor', for: :person
+    =f.hidden_field :person_id
+    =text_field_tag :search_person_field, @donation.person.try(:screen_name)
+.row
+  .three.columns
+    =f.label :date
+    =f.date_field :date
+  .three.columns
+    =f.label :amount
+    =f.text_field :amount
+

@@ -1,0 +1,9 @@
+%tr
+  %td
+    =donation.campaign.label
+  %td
+    =donation.person.screen_name
+  %td
+    =donation.date.strftime('%D')
+  %td
+    =link_to(number_to_currency( donation.amount ), edit_donation_url( donation ))

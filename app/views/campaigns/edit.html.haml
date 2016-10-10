@@ -1,0 +1,15 @@
+%h4
+  Editing Campaign
+ 
+=error_messages_for @campaign
+
+=form_for @campaign do |f|
+
+  =render partial: 'form_fields', locals: {f: f}
+
+  .row
+    .three.columns
+      =f.submit 'Update', class: 'button-primary'
+     
+
+

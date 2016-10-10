@@ -1,0 +1,16 @@
+%h4
+  Editing Donor
+ 
+=error_messages_for @person
+
+=form_for @person do |f|
+
+  =render partial: 'form_fields', locals: {f: f}
+
+  .row
+    .three.columns
+      =f.submit 'Update', class: 'button-primary'
+     
+
+
+

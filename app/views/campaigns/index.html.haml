@@ -1,0 +1,22 @@
+%h5
+  Campaigns
+  %span.smaller
+    =link_to 'new', new_campaign_url
+
+
+.pagination
+  =will_paginate @campaigns
+
+%table.u-full-width
+  %thead
+    %th
+      Label
+    %th
+      Date
+    %th
+      Note
+    %th
+      Donations
+  %tbody
+    =render partial: 'row', collection: @campaigns, as: :campaign
+ 

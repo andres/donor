@@ -1,0 +1,11 @@
+:javascript
+
+  $("#search_person_field").autocomplete({
+    source: '#{search_people_url}',
+    select: function(event, ui){
+      $(this).val(ui.item.label);
+      $("#donation_person_id").val( ui.item.value );
+      return false;
+    }
+  });
+

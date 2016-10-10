@@ -1,0 +1,9 @@
+%tr
+  %td
+    =link_to campaign.label, edit_campaign_url(campaign)
+  %td
+    =campaign.date.strftime('%D')
+  %td
+    =campaign.note.to_s[0,35] 
+  %td
+    =link_to number_to_currency(campaign.total_donations), donations_url(campaign_id: campaign.id), remote: true

@@ -1,0 +1,28 @@
+%tr
+  %td
+    -if person.first_name.present?
+      =link_to person.first_name, edit_person_url(person)
+  %td
+    =person.last_name
+  %td
+    -if person.first_name.blank? && person.business_name.present?
+      =link_to person.business_name, edit_person_url(person)
+    -else
+      =person.business_name
+  %td
+    =person.address_1
+    =person.address_2
+  %td
+    =person.city
+  %td
+    =person.state
+  %td
+    =person.zip
+  %td
+    =person.phone_1
+  %td
+    =person.solicitor
+  %td
+    =link_to number_to_currency(person.total_donations), donations_url(person_id: person.id), remote: true
+
+

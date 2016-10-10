@@ -1,0 +1,15 @@
+-if @current_user.present?
+  .navbar-spacer
+    %nav.navbar
+      .container
+        %ul.navbar-list
+          %li.navbar-item
+            =link_to 'Donors', people_url, class: 'navbar-link'
+          %li.navbar-item
+            =link_to 'Campaigns', campaigns_url, class: 'navbar-link'
+          %li.navbar-item
+            =link_to 'Donations', donations_url, class: 'navbar-link'
+          %li.navbar-item
+            =link_to 'Users', users_url, class: 'navbar-link'
+
+

@@ -1,0 +1,19 @@
+%h3 Login
+
+=flash_messages
+
+=form_tag '/session', method: :post, action: :create do 
+  
+  .row
+    .3.columns
+      =label :user, 'User'
+      =text_field_tag :login
+
+  .row
+    .3.columns
+      =label :password, 'Password'
+      =password_field_tag :password
+
+  .row
+    .3.columns
+      =submit_tag 'Login', class: 'button-primary'

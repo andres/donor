@@ -1,0 +1,16 @@
+%h4
+  New Donation
+ 
+=error_messages_for @donation
+
+=form_for @donation do |f|
+
+  =render partial: 'form_fields', locals: {f: f}
+
+  .row
+    .three.columns
+      =f.submit 'Enter Donation', class: 'button-primary'
+     
+
+=render partial: 'javascript'
+
