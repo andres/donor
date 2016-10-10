@@ -1,0 +1,16 @@
+%h5
+  Reports
+  %span.smaller
+
+
+.navbar-spacer
+  %nav.navbar
+    .container
+      %ul.navbar-list
+        %li.navbar-item
+          =link_to 'Labels', download_reports_url(report_type: :labels), class: 'navbar-link'
+        %li.navbar-item
+          =link_to 'Donations', download_reports_url(report_type: :donations), class: 'navbar-link'
+
+
+

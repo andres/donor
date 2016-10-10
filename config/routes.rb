@@ -12,4 +12,11 @@ Rails.application.routes.draw do
 
   root to: "session#index"
 
+  resources :reports, only: [:index, :show] do
+    collection do 
+      get 'download'
+    end
+  end
+
 end
+
