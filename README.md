@@ -1,13 +1,11 @@
 # Simple Donor System
 
 This donor administration system is provided under an MIT license,
-and without any implied guaranty, by CASA First Judicial District, NM
+and without any implied warranty, by CASA First Judicial District, NM
 
 Court Appointed Special Advocates (http://www.casafirst.org/)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
+System needs
 
 * Ruby version 2.3.1
 
