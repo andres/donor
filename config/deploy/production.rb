@@ -7,7 +7,7 @@ server 'casadonors.org', user: 'rails', roles: %w{app db web}
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 
-set :rvm_ruby_version, '2.3.1@donor'  
+set :rvm_ruby_version, '2.3.1@default'  
 
 # role-based syntax
 # ==================
