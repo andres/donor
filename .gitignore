@@ -20,3 +20,4 @@
 *.swo
 .ruby-gemset
 .ruby-version
+all_donation.csv

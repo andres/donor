@@ -18,7 +18,8 @@ class Report::Label
       'First Name', 'Last Name', 'Business Name',
       'Address',   'Address 2', 'City',
       'State',     'Zip',       'Phone',
-      'Phone 2',   'Solicitor', 'Donations'
+      'Phone 2',   'Solicitor', 'Donations',
+      'Last Date', 'Last Amount'
     ]
   end
 
@@ -44,7 +45,9 @@ class Report::Label
       person.phone_1,
       person.phone_2,
       person.solicitor,
-      person.total_donations.to_s
+      person.total_donations.to_s,
+      person.last_donation.try(:date).try(:strftime, '%D'),
+      person.last_donation.try(:amount).to_s
     ]
   end
 end

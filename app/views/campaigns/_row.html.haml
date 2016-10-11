@@ -2,7 +2,8 @@
   %td
     =link_to campaign.label, edit_campaign_url(campaign)
   %td
-    =campaign.date.strftime('%D')
+    -if campaign.date.present?
+      =campaign.date.strftime('%D')
   %td
     =campaign.note.to_s[0,35] 
   %td

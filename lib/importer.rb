@@ -13,14 +13,16 @@ class Importer
     def date
       m,d,y = date_string.split('/')
       Date.new(y.to_i, m.to_i, d.to_i)
+    rescue
+      nil
     end
 
     def city
-      city_state.split',')[0]
+      city_state.split(',')[0]
     end
 
     def state
-      city_state.split',')[1]
+      city_state.split(',')[1]
     end
 
     def zip
@@ -68,7 +70,7 @@ class Importer
 
     def donation_exists?
       Donation.where(amount_cents: amount_cents, 
-                     donor_id:     person_id, 
+                     person_id:     person_id, 
                      campaign_id:  campaign_id, 
                      date: date).any?
     end
@@ -95,7 +97,7 @@ class Importer
     end
 
     def find_person
-      Person.where(name: object.donor_name).first
+      Person.where(first_name: object.donor_name).first
     end
 
     def create_person

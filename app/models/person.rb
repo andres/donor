@@ -3,13 +3,17 @@ class Person < ApplicationRecord
 
   has_many :donations
 
-  scope :by_name, ->(){ order(:last_name) }
+  scope :by_name, ->(){ order([:last_name, :first_name, :business_name])}
 
   validate :validate_some_name
   validate :validate_address
 
   def total_donations
     self.donations.inject(0){|t,d| t += d.amount}
+  end
+
+  def last_donation
+    @last_donation ||= self.donations.order(:date).last
   end
 
   module CustomValidations
