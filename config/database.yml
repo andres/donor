@@ -89,4 +89,4 @@ production:
   database: donor_production
   pool: 5
   username: rails
-  password: <%= ENV['APPNAME_DATABASE_PASSWORD'] %>
+  password: <%= ENV['DONOR_DATABASE_PASSWORD'] %>
