@@ -12,7 +12,7 @@ class ReportsController < ApplicationController
     report = Report.for( params )
     send_data report.data,
               :type => 'text/csv; charset=iso-8859-1; header=present',
-              :disposition => "attachment; filename=#{report.file_name}.csv"
+              :disposition => "attachment; filename=#{report.file_name}"
   end
 
 end

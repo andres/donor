@@ -35,11 +35,14 @@ gem 'skeleton-rails', :git => 'https://github.com/helios-technologies/skeleton-r
 gem 'will_paginate', '~> 3.1.0'
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
+  gem 'capistrano-bundler'
+  gem 'capistrano-puma'
 end
 
 group :development do

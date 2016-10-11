@@ -83,6 +83,10 @@ test:
 #
 production:
   <<: *default
+  host: localhost
+  adapter: postgresql
+  encoding: utf8
   database: donor_production
-  username: donor
-  password: <%= ENV['DONOR_DATABASE_PASSWORD'] %>
+  pool: 5
+  username: rails
+  password: <%= ENV['APPNAME_DATABASE_PASSWORD'] %>
