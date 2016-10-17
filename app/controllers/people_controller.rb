@@ -54,7 +54,7 @@ class PeopleController < ApplicationController
   def permitted_parameters
     params.require(:person).
            permit(:first_name, :last_name, :business_name, :address_1,
-                  :address_2, :city, :state, :zip, :phone_1, :phone_2,
-                  :solicitor) 
+                  :address_2, :city, :state, :zip, :email,
+                  :phone_1, :phone_2, :solicitor) 
   end
 end

@@ -17,9 +17,9 @@ class Report::Label
       'id',
       'First Name', 'Last Name', 'Business Name',
       'Address',   'Address 2', 'City',
-      'State',     'Zip',       'Phone',
-      'Phone 2',   'Solicitor', 'Donations',
-      'Last Date', 'Last Amount'
+      'State',     'Zip',       'Email',
+      'Phone', 'Phone 2',   'Solicitor',
+      'Donations', 'Last Date', 'Last Amount'
     ]
   end
 
@@ -42,6 +42,7 @@ class Report::Label
       person.city,
       person.state,
       person.zip,
+      person.email,
       person.phone_1,
       person.phone_2,
       person.solicitor,
