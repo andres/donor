@@ -7,9 +7,21 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    #modal.modal{style: 'display: none;'}
+      #modal_header
+        =link_to('X', '#', class: 'hide_modal')
+      #modal_content
+
     .container
       %h3 Simple Donor System
 
       =render partial: 'application/menu'
 
       = yield
+
+
+  :javascript
+    $('.hide_modal').on('click', function(){
+      $('#modal_content').html('');
+      $('#modal.modal').hide();
+    });

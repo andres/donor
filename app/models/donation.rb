@@ -9,7 +9,6 @@ class Donation < ApplicationRecord
   validates :amount_cents, presence: true
   validates :date, presence: true
 
-
   monetize :amount_cents
 
 end

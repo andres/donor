@@ -39,6 +39,17 @@ class PeopleController < ApplicationController
     end
   end
 
+  def destroy
+    @person = Person.find( params[:id] )
+    if @person.donations.empty?
+      @person.destroy
+      flash[:notice] = 'Deleted'
+    else
+      flash[:notice] = 'Can\'t delete'
+    end
+    redirect_to action: 'index'
+  end
+
   private
   def permitted_parameters
     params.require(:person).

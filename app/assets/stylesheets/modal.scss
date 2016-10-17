@@ -1,0 +1,35 @@
+@mixin all-box-shadow($hd, $vd, $blur, $color) {
+  -webkit-box-shadow: $hd $vd $blur $color;
+  -moz-box-shadow: $hd $vd $blur $color;
+  box-shadow: $hd $vd $blur $color;
+}
+
+@mixin dialog-border($color, $radius, $width:5px) {
+  border-radius: $radius;
+  border-style: solid;
+  border-width: $width;
+  border-color: $color;
+}
+
+.modal {
+  position: fixed;
+  z-index: 35;
+  top: 5%;
+  left: 20%;
+  margin-top: 5%;
+  background-color: white;
+  padding: 30px 6px 6px 12px;
+  height: auto;
+  max-height: 75%;
+  max-width: 76%;
+  overflow: auto;
+  @include all-box-shadow(0px, 0px, 10px, rgba(0, 0, 0, 0.6));
+  @include dialog-border(#DFE7EE, 9px);
+  .popup_menu_bar {
+    z-index: 36;
+  }
+}
+
+.hide_modal {
+  top: -3em;
+}

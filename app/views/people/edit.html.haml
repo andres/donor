@@ -12,5 +12,5 @@
       =f.submit 'Update', class: 'button-primary'
      
 
-
-
+-if @person.donations.empty?
+  =link_to('Delete', person_url(@person), action: 'destroy', method: :delete, data: {confirm: 'Delete this entry?'}, class: 'button')

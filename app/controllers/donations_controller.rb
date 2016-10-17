@@ -1,7 +1,15 @@
 class DonationsController < ApplicationController
 
   def index
-    @donations = Donation.order('id desc').paginate(per_page: 30, page: params[:page])
+    if params[:person_id].present?
+      @person    = Person.find( params[:person_id] )
+      @donations = @person.donations.order('date desc')
+    elsif params[:campaign_id].present?
+      @campaign  = Campaign.find( params[:campaign_id] )
+      @donations = @campaign.donations.order('date desc')
+    else
+      @donations = Donation.order('id desc').paginate(per_page: 30, page: params[:page])
+    end
   end
 
   def new
