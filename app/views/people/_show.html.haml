@@ -1,0 +1,36 @@
+%h5
+  =@person.screen_name
+
+%div
+  =@person.address_1
+  =@person.address_2
+
+%div
+  =@person.city
+  =@person.state
+  =@person.zip
+
+
+%div
+  =@person.phone_1
+  %br
+  =@person.phone_2
+
+%h5
+  Donations
+  =number_to_currency(@person.total_donations)
+
+%table.u-full-width
+  %thead
+    %th
+      Campaign
+    %th
+      Donor
+    %th
+      Date
+    %th
+      Amount
+
+  %tbody
+    =render partial: 'donations/row', collection: @person.donations.order('date desc'), as: :donation
+ 

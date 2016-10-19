@@ -3,35 +3,50 @@
   %span.smaller
     =link_to 'new', new_person_url
 
-.pagination
-  =will_paginate @people
+.row
+  .three.columns
+    =text_field_tag :menu_search, nil, placeholder: 'Search Donor'
+  .nine.columns
+    .pagination
+      =will_paginate @people
 
+#donor_page_content
+  %table.u-full-width
+    %thead
+      %th
+        First
+      %th
+        Last
+      %th
+        Company
+      %th
+        Address
+      %th
+        City
+      %th
+        State
+      %th
+        Zip
+      %th
+        Email
+      %th
+        Phone
+      %th
+        Contact
+      %th
+        Donations
 
-%table.u-full-width
-  %thead
-    %th
-      First
-    %th
-      Last
-    %th
-      Company
-    %th
-      Address
-    %th
-      City
-    %th
-      State
-    %th
-      Zip
-    %th
-      Email
-    %th
-      Phone
-    %th
-      Contact
-    %th
-      Donations
+    %tbody
+      =render partial: 'row', collection: @people, as: :person
 
-  %tbody
-    =render partial: 'row', collection: @people, as: :person
+:javascript
+
+  $("#menu_search").autocomplete({
+    source: "#{search_people_url}",
+    select: function(event, ui){
+      $.get({ url:   "people" + "/" + ui.item.value });
+      return false;
+    }
+  });
+
 

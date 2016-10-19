@@ -50,6 +50,11 @@ class PeopleController < ApplicationController
     redirect_to action: 'index'
   end
 
+  def show
+    @person = Person.find( params[:id] )
+  end
+   
+
   private
   def permitted_parameters
     params.require(:person).

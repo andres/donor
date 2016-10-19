@@ -11,7 +11,10 @@ class Person::Search
   def search
     Person.where("   ((first_name || ' ' || last_name) ILIKE :term) 
                   OR ((last_name || ' ' || first_name) ILIKE :term)
-                  OR (business_name ILIKE :term)",
+                  OR (business_name ILIKE :term)
+                  OR first_name ILIKE :term
+                  OR last_name ILIKE :term
+                  OR business_name ILIKE :term",
                   term: "%#{term}%").
            order('last_name')
   end
