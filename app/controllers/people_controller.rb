@@ -60,6 +60,7 @@ class PeopleController < ApplicationController
     params.require(:person).
            permit(:first_name, :last_name, :business_name, :address_1,
                   :address_2, :city, :state, :zip, :email,
-                  :phone_1, :phone_2, :solicitor) 
+                  :phone_1, :phone_2, :solicitor,
+                  :ok_to_email, :ok_to_mail, :ok_to_call) 
   end
 end

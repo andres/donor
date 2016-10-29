@@ -19,6 +19,7 @@ class Report::Label
       'Address',   'Address 2', 'City',
       'State',     'Zip',       'Email',
       'Phone', 'Phone 2',   'Solicitor',
+      'OK Email', 'OK Mail', 'Ok Call',
       'Donations', 'Last Date', 'Last Amount'
     ]
   end
@@ -46,6 +47,9 @@ class Report::Label
       person.phone_1,
       person.phone_2,
       person.solicitor,
+      (person.ok_to_email? ? 'Y' : 'N'),
+      (person.ok_to_mail? ? 'Y' : 'N'),
+      (person.ok_to_call? ? 'Y' : 'N'),
       person.total_donations.to_s,
       person.last_donation.try(:date).try(:strftime, '%D'),
       person.last_donation.try(:amount).to_s

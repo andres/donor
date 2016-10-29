@@ -25,6 +25,15 @@
   %td
     =person.solicitor
   %td
+    -if person.ok_to_email?
+      EM
+  %td
+    -if person.ok_to_mail?
+      SM
+  %td
+    -if person.ok_to_call?
+      C
+  %td
     =link_to number_to_currency(person.total_donations), donations_url(person_id: person.id), remote: true
 
 

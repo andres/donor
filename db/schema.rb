@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161017211207) do
+ActiveRecord::Schema.define(version: 20161029161435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,12 +55,18 @@ ActiveRecord::Schema.define(version: 20161017211207) do
     t.string   "phone_2"
     t.string   "solicitor"
     t.integer  "created_by"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.string   "email"
+    t.boolean  "ok_to_email",   default: true, null: false
+    t.boolean  "ok_to_mail",    default: true, null: false
+    t.boolean  "ok_to_call",    default: true, null: false
     t.index ["business_name"], name: "index_people_on_business_name", using: :btree
     t.index ["first_name"], name: "index_people_on_first_name", using: :btree
     t.index ["last_name"], name: "index_people_on_last_name", using: :btree
+    t.index ["ok_to_call"], name: "index_people_on_ok_to_call", using: :btree
+    t.index ["ok_to_email"], name: "index_people_on_ok_to_email", using: :btree
+    t.index ["ok_to_mail"], name: "index_people_on_ok_to_mail", using: :btree
     t.index ["solicitor"], name: "index_people_on_solicitor", using: :btree
   end
 

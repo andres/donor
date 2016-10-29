@@ -1,5 +1,5 @@
 %h5
-  =@person.screen_name
+  =link_to(@person.screen_name, edit_person_url(@person))
 
 %div
   =@person.address_1
@@ -15,6 +15,19 @@
   =@person.phone_1
   %br
   =@person.phone_2
+
+%div
+
+  -if person.ok_to_email?
+    Email ok,
+  -if person.ok_to_mail?
+    Snail Mail ok,
+  -if person.ok_to_call?
+    Calling ok,
+
+-if person.donations.empty?
+  %div
+    =link_to('Delete', person_url(@person), action: 'destroy', method: :delete, data: {confirm: 'Delete this entry?'}, class: 'button')
 
 %h5
   Donations

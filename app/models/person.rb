@@ -6,7 +6,7 @@ class Person < ApplicationRecord
   scope :by_name, ->(){ order([:last_name, :first_name, :business_name])}
 
   validate :validate_some_name
-  validate :validate_address
+  #validate :validate_address #some might want address, some might not
 
   def total_donations
     self.donations.inject(0){|t,d| t += d.amount}
