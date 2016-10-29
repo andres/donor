@@ -18,14 +18,14 @@
 
 %div
 
-  -if person.ok_to_email?
+  -if @person.ok_to_email?
     Email ok,
-  -if person.ok_to_mail?
+  -if @person.ok_to_mail?
     Snail Mail ok,
-  -if person.ok_to_call?
+  -if @person.ok_to_call?
     Calling ok,
 
--if person.donations.empty?
+-if @person.donations.empty?
   %div
     =link_to('Delete', person_url(@person), action: 'destroy', method: :delete, data: {confirm: 'Delete this entry?'}, class: 'button')
 
