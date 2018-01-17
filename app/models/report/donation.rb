@@ -32,7 +32,7 @@ class Report::Donation
       donation.id,
       donation.campaign.label,
       donation.person.screen_name,
-      donation.date.strftime('%Y-%m-%d'),
+      donation.date.try(:strftime, '%Y-%m-%d'),
       donation.person.solicitor,
       donation.amount.to_s
     ]
